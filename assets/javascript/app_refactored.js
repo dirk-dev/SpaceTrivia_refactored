@@ -1,13 +1,13 @@
 console.log("app.js active");
 
 $(document).ready(function() {
-  // var questionVal;
-  var correctAnswers = 0;
-  var wrongAnswers = 0;
-  var unanswered = 0;
-  var timer = 51;
+  // let questionVal;
+  let correctAnswers = 0;
+  let wrongAnswers = 0;
+  let unanswered = 0;
+  let timer = 51;
 
-  var questions = [
+  let questions = [
     {
       question: "What constellation is also known as the Seven Sisters?",
       answers: ["Big Dipper", "Pleiades", "Cassiopeia"],
@@ -72,7 +72,7 @@ $(document).ready(function() {
   function scoring() {
     for (let i = 0; i < questions.length; i++) {
       //added :checked to indicate the checked radio box
-      var questionAnswer = $("input[name=question" + [i] + "]:checked").val();
+      let questionAnswer = $("input[name=question" + [i] + "]:checked").val();
       console.log("qa:", questionAnswer); //this is logging qa: on
 
       if (questionAnswer === questions[i].correctAnswer) {
@@ -107,8 +107,6 @@ $(document).ready(function() {
     // run();
     // decrement();
     // console.log("start button click running");
-
-    
 
     for (let j = 0; j < questions.length; j++) {
       $("#questionDiv").prepend("<form>");
