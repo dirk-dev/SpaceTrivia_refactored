@@ -111,20 +111,12 @@ $(document).ready(function() {
     for (let j = 0; j < questions.length; j++) {
       $("#questionDiv").prepend("<form>");
 
-      $("#question_" + j).html(questions[j].question);
-
-      $("#questionDiv").append('<input type = "radio" value="test">Test<br>');
+      $("#questionDiv").append(questions[j].question);
 
       $("#questionDiv").append("</form>");
       $("#questionDiv").append("<hr>");
 
-      $("label[for=ans" + j + "A]").html(questions[j].answers[0]);
-      $("label[for=ans" + j + "B]").html(questions[j].answers[1]);
-      $("label[for=ans" + j + "C]").html(questions[j].answers[2]);
-      $("</form>");
-      $("<hr>");
-    }
-
+      
     //do I need to give each question a value?
   });
 
@@ -137,5 +129,4 @@ $(document).ready(function() {
   });
 });
 
-//this works if the value is hard-coded into the HTML.
 //find out how to automatically render the questions with their answers in JS
