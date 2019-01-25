@@ -63,6 +63,7 @@ $(document).ready(() => {
     timer--;
     $("#countdown").html("Time remaining: " + timer + " seconds");
     if (timer === 0) {
+      scoring();
       $("#gameBoard").remove();
       $("#scoreScreen").show();
     }
@@ -72,7 +73,6 @@ $(document).ready(() => {
     for (let i = 0; i < questions.length; i++) {
       //added :checked to indicate the checked radio box
       let questionAnswer = $("input[name=question" + [i] + "]:checked").val();
-      console.log("qa:", questionAnswer); //this is logging qa: on
 
       if (questionAnswer === questions[i].correctAnswer) {
         correctAnswers++;
@@ -84,12 +84,6 @@ $(document).ready(() => {
       } else {
         unanswered++;
       }
-      console.log(
-        "radio button value: ",
-        $("input[name=question" + [i] + "]:checked").val()
-      );
-      console.log("correct answer:", questions[i].correctAnswer);
-      console.log("question " + [i] + " name = " + [(name = "question" + [i])]);
     }
 
     $("#correctAnswers").append(correctAnswers);
@@ -103,19 +97,20 @@ $(document).ready(() => {
   $("#startButton").click(() => {
     $("#startScreen").hide();
     $("#gameBoard").show();
-    // run();
-    // decrement();
-    // console.log("start button click running");
+    run();
+    decrement();
+    console.log("start button click running");
 
     //outer for loop iterates through each question
     for (let j = 0; j < questions.length; j++) {
-      $("#questionDiv").append("<p>" + questions[j].question + "</p>");
-      $("#questionDiv").append("<br>");
+      $("#questionDiv").append(
+        "<p class='questionCopy'>" + questions[j].question + "</p>"
+      );
 
       //inner for loop iterates through the answer array of each question
       for (let k = 0; k < questions[j].answers.length; k++) {
         $("#questionDiv").append(
-          '<input type="radio" name="question' +
+          '<input type="radio" class="radio-btn" name="question' +
             j +
             '" value="' +
             questions[j].answers[k] +
@@ -123,15 +118,14 @@ $(document).ready(() => {
             questions[j].answers[k]
         );
       }
-      $(".formVal").append("<br>");
+      $("#questionDiv").append("<br>");
+      $("#questionDiv").append("<hr>");
     }
-    $("#questionDiv").append("<hr>");
   });
 
   // clears question screen takes user to scoring screen
   $("#doneButton").click(() => {
     scoring();
-
     $("#gameBoard").remove();
     $("#scoreScreen").show();
   });
