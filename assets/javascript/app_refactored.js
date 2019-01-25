@@ -1,7 +1,6 @@
 console.log("app.js active");
 
-$(document).ready(function() {
-  // let questionVal;
+$(document).ready(() => {
   let correctAnswers = 0;
   let wrongAnswers = 0;
   let unanswered = 0;
@@ -50,26 +49,26 @@ $(document).ready(function() {
     }
   ];
 
-  function gameStart() {
+  let gameStart = () => {
     $("#gameBoard").hide();
     $("#scoreScreen").hide();
     console.log("gameStart running");
-  }
+  };
 
-  function run() {
+  let run = () => {
     intervalId = setInterval(decrement, 1000);
-  }
+  };
 
-  function decrement() {
+  let decrement = () => {
     timer--;
     $("#countdown").html("Time remaining: " + timer + " seconds");
     if (timer === 0) {
       $("#gameBoard").remove();
       $("#scoreScreen").show();
     }
-  }
+  };
 
-  function scoring() {
+  let scoring = () => {
     for (let i = 0; i < questions.length; i++) {
       //added :checked to indicate the checked radio box
       let questionAnswer = $("input[name=question" + [i] + "]:checked").val();
@@ -96,12 +95,12 @@ $(document).ready(function() {
     $("#correctAnswers").append(correctAnswers);
     $("#wrongAnswers").append(wrongAnswers);
     $("#unanswered").append(unanswered);
-  }
+  };
 
   // removes start button onclick and displays question screen
   gameStart();
 
-  $("#startButton").click(function() {
+  $("#startButton").click(() => {
     $("#startScreen").hide();
     $("#gameBoard").show();
     // run();
@@ -115,18 +114,16 @@ $(document).ready(function() {
 
       $("#questionDiv").append("</form>");
       $("#questionDiv").append("<hr>");
+    }
 
-      
     //do I need to give each question a value?
   });
 
   // clears question screen takes user to scoring screen
-  $("#doneButton").click(function() {
+  $("#doneButton").click(() => {
     scoring();
 
     $("#gameBoard").remove();
     $("#scoreScreen").show();
   });
 });
-
-//find out how to automatically render the questions with their answers in JS
