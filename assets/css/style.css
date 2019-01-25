@@ -71,8 +71,7 @@ p {
   text-align: right;
 }
 
-/* wildcard selector for all ids that begin with question */
-p[id*="question"] {
+.question {
   font-weight: bold;
   line-height: 1.7;
 }

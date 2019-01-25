@@ -1,6 +1,7 @@
 console.log("app.js active");
 
-$(document).ready(() => {
+$(document).ready(function() {
+  // let questionVal;
   let correctAnswers = 0;
   let wrongAnswers = 0;
   let unanswered = 0;
@@ -49,30 +50,29 @@ $(document).ready(() => {
     }
   ];
 
-  let gameStart = () => {
+  function gameStart() {
     $("#gameBoard").hide();
     $("#scoreScreen").hide();
     console.log("gameStart running");
-  };
+  }
 
-  let run = () => {
+  function run() {
     intervalId = setInterval(decrement, 1000);
-  };
+  }
 
-  let decrement = () => {
+  function decrement() {
     timer--;
     $("#countdown").html("Time remaining: " + timer + " seconds");
     if (timer === 0) {
       $("#gameBoard").remove();
       $("#scoreScreen").show();
     }
-  };
+  }
 
-  let scoring = () => {
+  function scoring() {
     for (let i = 0; i < questions.length; i++) {
       //added :checked to indicate the checked radio box
       let questionAnswer = $("input[name=question" + [i] + "]:checked").val();
-      console.log("qa:", questionAnswer); //this is logging qa: on
 
       if (questionAnswer === questions[i].correctAnswer) {
         correctAnswers++;
@@ -95,44 +95,71 @@ $(document).ready(() => {
     $("#correctAnswers").append(correctAnswers);
     $("#wrongAnswers").append(wrongAnswers);
     $("#unanswered").append(unanswered);
-  };
+  }
 
   // removes start button onclick and displays question screen
   gameStart();
 
-  $("#startButton").click(() => {
+  $("#startButton").click(function() {
     $("#startScreen").hide();
     $("#gameBoard").show();
     // run();
     // decrement();
     // console.log("start button click running");
 
-    //outer for loop iterates through each question
-    for (let j = 0; j < questions.length; j++) {
-      $("#questionDiv").append("<p>" + questions[j].question + "</p>");
-      $("#questionDiv").append("<br>");
+    /*This code displays question & answers corectly, but NOT inside a form */
 
-      //inner for loop iterates through the answer array of each question
-      for (let k = 0; k < questions[j].answers.length; k++) {
-        $("#questionDiv").append(
-          '<input type="radio" name="question' +
-            j +
-            '" value="' +
-            questions[j].answers[k] +
-            '">' +
-            questions[j].answers[k]
-        );
+    //iterates through the questions array - renders each question on DOM
+    for (let j = 0; j < questions.length; j++) {
+      //displays question in HTML
+      let questionHeading = questions[j].question;
+      $("#questionDiv").append("<form>");
+      $("#questionDiv").append("<p>" + questionHeading + "</p>");
+
+      //iterates through all 3 answers in the specific question
+      for (let k = 0; k < questions[k].answers.length; k++) {
+        // let answerOptions = <input id="answer"[k] type="radio" name=question[k] value="Big Dipper"> <label for="anskA">AnswerkA</label>;
+
+        $("#questionDiv").append("<span>answerOptions </span>");
       }
-      $(".formVal").append("<br>");
+      $("#questionDiv").append("<hr>");
+
+      console.log("question heading", questionHeading);
+
+      /* questionBlock += $(
+      '<input id="answerkA" type="radio" name="questionk" value="Big Dipper"> <label for="anskA">AnswerkA</label>'
+      );
+      console.log(questionBlock); */
+
+      // $("#testDiv").append(questionBlock);
+
+      // $("#questionDiv").append('<input type = "radio" value="test">Test<br>');
+
+      // $("#questionDiv").append(
+      //   '<input id="answer0A" type="radio" name="question0" value="Big Dipper"> <label for="ans0A">Answer0A</label>'
+      // );
+
+      // $("#questionDiv").append("</form>");
+      // $("#questionDiv").append("<hr>");
+
+      // $("label[for=ans" + j + "A]").html(questions[i].answers[0]);
+      // $("label[for=ans" + j + "B]").html(questions[i].answers[1]);
+      // $("label[for=ans" + j + "C]").html(questions[i].answers[2]);
+      // $("</form>");
+      // $("<hr>");
     }
-    $("#questionDiv").append("<hr>");
+
+    //do I need to give each question a value?
   });
 
   // clears question screen takes user to scoring screen
-  $("#doneButton").click(() => {
+  $("#doneButton").click(function() {
     scoring();
 
     $("#gameBoard").remove();
     $("#scoreScreen").show();
   });
 });
+
+//this works if the value is hard-coded into the HTML.
+//find out how to automatically render the questions with their answers in JS
