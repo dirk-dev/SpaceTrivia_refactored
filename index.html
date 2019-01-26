@@ -6,28 +6,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Space Trivia 2.0</title>
-    <link href="https://fonts.googleapis.com/css?family=Anton|Open+Sans|Oswald|Roboto+Condensed"
+    <link href="https://fonts.googleapis.com/css?family=Anton|Open+Sans|Oswald|Roboto+Condensed|Exo+2"
         rel="stylesheet">
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
     <script type="text/javascript" src="assets/javascript/app_refactored.js"></script>
 
     <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
 </head>
+    
 
 <body>
     <br>
-
-    <h1>Space Trivia 2.0</h1>
+        <h1 class="animated zoomIn">Space Trivia 2.0</h1>
     <br>
     <!-- HTML elements for the start screen -->
     <div id=startScreen>
         <br>
         <p>Click to start the Space Trivia game.</p>
         <br>
-        <p>No Googling, please!</p>
+        <p class="styledFont">No Googling, please!</p>
         <div id=button1Div><button id=startButton>
                 <p>Start</p>
             </button>
@@ -36,7 +36,6 @@
     </div>
 
     <div id=gameBoard>
-
         <div id=timer>
             <p>
                 <div id=countdown></div>
@@ -56,17 +55,11 @@
     </div>
     <div id=scoreScreen>
         <h2 id=yourScore>Your Score:</h2>
-        <br>
         <p id=correctAnswers>Correct answers: </p>
         <p id=wrongAnswers>Incorrect answers: </p>
         <p id=unanswered>Unanswered questions: </p>
 
     </div>
-
-
-
-
-
 
 </body>
 
