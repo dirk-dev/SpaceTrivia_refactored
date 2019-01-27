@@ -132,13 +132,3 @@ $(document).ready(() => {
     $("#scoreScreen").show();
   });
 });
-
-//is the setTimeout doing anything?
-/* 
-* the scoring function called twice - once when the done button is clicked, and once
-when the timer runs out again
-
-* discrepancy betwween show/hide/remove
-
-
-*/
