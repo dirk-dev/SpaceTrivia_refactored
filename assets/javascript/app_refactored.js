@@ -4,7 +4,7 @@ $(document).ready(() => {
   let correctAnswers = 0;
   let wrongAnswers = 0;
   let unanswered = 0;
-  let timer = 51;
+  let timer = 11;
 
   let questions = [
     {
@@ -84,6 +84,7 @@ $(document).ready(() => {
       } else {
         unanswered++;
       }
+      console.log("scoring function called");
     }
 
     $("#correctAnswers").append(correctAnswers);
@@ -125,8 +126,19 @@ $(document).ready(() => {
 
   // clears question screen takes user to scoring screen
   $("#doneButton").click(() => {
+    timer = 0;
     scoring();
     $("#gameBoard").remove();
     $("#scoreScreen").show();
   });
 });
+
+//is the setTimeout doing anything?
+/* 
+* the scoring function called twice - once when the done button is clicked, and once
+when the timer runs out again
+
+* discrepancy betwween show/hide/remove
+
+
+*/
