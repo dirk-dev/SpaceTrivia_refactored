@@ -84,6 +84,7 @@ $(document).ready(() => {
       } else {
         unanswered++;
       }
+      console.log("scoring function called");
     }
 
     $("#correctAnswers").append(correctAnswers);
@@ -124,7 +125,9 @@ $(document).ready(() => {
   });
 
   // clears question screen takes user to scoring screen
+  // timer = 0 added to prevent scoring function from running twice
   $("#doneButton").click(() => {
+    timer = 0;
     scoring();
     $("#gameBoard").remove();
     $("#scoreScreen").show();
