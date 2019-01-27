@@ -4,7 +4,7 @@ $(document).ready(() => {
   let correctAnswers = 0;
   let wrongAnswers = 0;
   let unanswered = 0;
-  let timer = 11;
+  let timer = 51;
 
   let questions = [
     {
@@ -125,6 +125,7 @@ $(document).ready(() => {
   });
 
   // clears question screen takes user to scoring screen
+  // timer = 0 added to prevent scoring function from running twice
   $("#doneButton").click(() => {
     timer = 0;
     scoring();
