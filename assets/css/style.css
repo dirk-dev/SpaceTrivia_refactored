@@ -10,17 +10,14 @@ h1 {
   color: white;
   text-align: center;
   font-size: 80px;
-  /* text-shadow: 0px 0px 15px midnightblue, 2px 2px 15px darkblue,
-    4px 4px 15px darkcyan, 6px 6px 15px mediumaquamarine, 8px 8px 15px lightcyan,
-    10px 10px 5px white; */
-  padding: 0px 0px 15px 0px;
+     padding: 0px 0px 15px 0px;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  background-image: url(../images/title_img.jpg);
-  background-size: 200%;
-  top: 1000px;
+  background-image: url(../images/starfield_wallpaper.jpg);
+  background-size: 75%; 
+   top: 1000px;
   left: 2500px;
-  -webkit-filter: drop-shadow(3px 3px 3px rgb(255, 255, 255));
+  -webkit-filter: drop-shadow(3px 3px 3px rgb(255, 255, 255), -6px -6px 3px rgb(255, 255, 255));
   filter: drop-shadow(3px 3px 3px rgb(255, 255, 255));
 }
 
