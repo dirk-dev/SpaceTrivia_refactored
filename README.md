@@ -2,7 +2,7 @@
 
 ![Space Trivia game](./assets/images/app_screenshot.png)
 
-## [Space Trivia deployed app](https://dirk-kiesewetter.github.io/SpaceTriviaGame-v1/)
+## [Space Trivia deployed app](https://dirk-kiesewetter.github.io/SpaceTrivia_refactored/)
 
 ---
 
@@ -38,7 +38,7 @@ Space Trivia can either be run from the hosted site (link is above) or you can d
 
 ## Demo:
 
-![Space Trivia demo](./assets/gifs/space_trivia_demo.gif)
+![Space Trivia demo](./assets/gifs/space_trivia_refactored.gif)
 
 ## Built with:
 
