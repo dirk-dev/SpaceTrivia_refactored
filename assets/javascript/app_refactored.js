@@ -12,6 +12,10 @@ $(document).ready(() => {
     console.log('gameStart running')
   }
 
+  const run = () => {
+    intervalId = setInterval(decrement, 1000)
+  }
+
   const decrement = () => {
     timer--
     $('#countdown').html(`Time remaining: ${timer} seconds`)
@@ -20,10 +24,6 @@ $(document).ready(() => {
       $('#gameBoard').remove()
       $('#scoreScreen').show()
     }
-  }
-
-  const run = () => {
-    intervalId = setInterval(decrement, 1000)
   }
 
   const scoring = () => {
@@ -55,9 +55,9 @@ $(document).ready(() => {
   $('#startButton').click(() => {
     $('#startScreen').hide()
     $('#gameBoard').show()
-    run()
+    // run()
     decrement()
-    console.log('start button click running')
+    // console.log('start button click running')
 
     // outer for loop iterates through each question
     for (let j = 0; j < questions.length; j++) {
