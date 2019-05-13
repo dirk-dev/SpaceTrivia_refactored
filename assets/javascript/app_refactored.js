@@ -13,7 +13,7 @@ $(document).ready(() => {
   }
 
   const run = () => {
-    setInterval(decrement, 1000)
+    setInterval(decrement(), 1000)
   }
 
   const decrement = () => {
