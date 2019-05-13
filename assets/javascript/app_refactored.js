@@ -9,7 +9,7 @@ $(document).ready(() => {
   const gameStart = () => {
     $('#gameBoard').hide()
     $('#scoreScreen').hide()
-    console.log('gameStart running')
+    // console.log('gameStart running')
   }
 
   const run = () => {
