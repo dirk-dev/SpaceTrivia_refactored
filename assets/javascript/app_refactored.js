@@ -55,7 +55,7 @@ $(document).ready(() => {
   $('#startButton').click(() => {
     $('#startScreen').hide()
     $('#gameBoard').show()
-    // run()
+    run()
     decrement()
     // console.log('start button click running')
 
@@ -70,7 +70,7 @@ $(document).ready(() => {
         $('#questionDiv').append(
           `<input type="radio" class="radio-btn" name="question${j}" value="${
             questions[j].answers[k]
-          }">${questions[j].answers[k]}`
+          }">${questions[j].answers[k]} `
         )
       }
       $('#questionDiv').append('<br>')
