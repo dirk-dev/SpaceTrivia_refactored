@@ -1,7 +1,5 @@
 import questions from './questions.js'
 
-console.log('app.js active')
-
 $(document).ready(() => {
   let correctAnswers = 0
   let wrongAnswers = 0
@@ -14,10 +12,6 @@ $(document).ready(() => {
     console.log('gameStart running')
   }
 
-  const run = () => {
-    intervalId = setInterval(decrement, 1000)
-  }
-
   const decrement = () => {
     timer--
     $('#countdown').html(`Time remaining: ${timer} seconds`)
@@ -26,6 +20,10 @@ $(document).ready(() => {
       $('#gameBoard').remove()
       $('#scoreScreen').show()
     }
+  }
+
+  const run = () => {
+    intervalId = setInterval(decrement, 1000)
   }
 
   const scoring = () => {
