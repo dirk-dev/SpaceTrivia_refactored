@@ -8,15 +8,15 @@
 
 This is the Space Trivia game refactored for cleaner code &amp; ES6 syntax. The questions are no longer hard-coded, but are generated dynamically. In addition, the questions have been moved into a separate JavaScript file for better modularity.
 
-The original version can be found here: 
+The GitHub repo for the original version can be found [here](https://github.com/dirk-kiesewetter/SpaceTriviaGame-v1): 
 
 ## About Space Trivia:
 
-The goal of **Space Trivia** is to correctly answer all of the questions by selecting the correct radio button. Wrong answers are scored separately from questions that are not answered. A start button begins the game, and the game ends either when the timer runs out or the user clicks the done button.
+The goal of **Space Trivia** is to correctly answer all of the questions by selecting the correct radio button. Wrong answers are scored separately from unanswered questions. Clicking the ```start``` button begins the game, and the game ends either when the timer runs out or the user clicks the ```done``` button.
 
 ## Description of the problem:
 
-Space Trivia needed to display questions and radio buttons for possible answers on screen. Questions and answers are in an array of objects. Each object contains the question, an array of possible answers, and the correct answer.
+Space Trivia needed to display questions and radio buttons for possible answers on screen. Questions and answers are in an array of objects in a separate file. Each object contains the question, an array of possible answers, and the correct answer.
 
 There also needed to be a way to check user answers against an array of objects, with each question an individual object. The questions needed to be scored correctly, and a timer would start counting down once the user clicked `start`. Correct answers, incorrect answers, and unanswered questions were to be scored separately.
 
@@ -35,6 +35,7 @@ Space Trivia has an HMTL document for structure and the question coding, JavaScr
 ## How to run Space Trivia:
 
 Space Trivia can either be run from the hosted site (link is above) or you can download the files to a local directory and open the HTML document in a web browser.
+The questions can changed as desired. Simply replace the contents of the ```question.js``` file with the new questions and answers.
 
 ## Demo:
 
@@ -56,3 +57,4 @@ Space Trivia can either be run from the hosted site (link is above) or you can d
 - Make app more mobile-friendly with larger radio buttons
 - add button for user to return to start screen
 - improve modularity/allow user to customize game with different background images/app title etc.
+- adjust 
