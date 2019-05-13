@@ -13,7 +13,7 @@ $(document).ready(() => {
   }
 
   const run = () => {
-    intervalId = setInterval(decrement, 1000)
+    setInterval(decrement, 1000)
   }
 
   const decrement = () => {
@@ -57,7 +57,6 @@ $(document).ready(() => {
     $('#gameBoard').show()
     run()
     decrement()
-    // console.log('start button click running')
 
     // outer for loop iterates through each question
     for (let j = 0; j < questions.length; j++) {
