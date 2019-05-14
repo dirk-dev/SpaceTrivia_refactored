@@ -56,7 +56,7 @@ $(document).ready(() => {
     $('#startScreen').hide()
     $('#gameBoard').show()
     run()
-    decrement()
+    // decrement()
 
     // outer for loop iterates through each question
     for (let j = 0; j < questions.length; j++) {
