@@ -13,7 +13,7 @@ $(document).ready(() => {
   }
 
   const run = () => {
-    setInterval(decrement(), 1000)
+    setInterval(decrement, 1000)
   }
 
   const decrement = () => {
@@ -69,7 +69,7 @@ $(document).ready(() => {
         $('#questionDiv').append(
           `<input type="radio" class="radio-btn" name="question${j}" value="${
             questions[j].answers[k]
-          }">${questions[j].answers[k]} `
+          }">${questions[j].answers[k]}   `
         )
       }
       $('#questionDiv').append('<br>')
