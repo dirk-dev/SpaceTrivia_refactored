@@ -2,13 +2,13 @@
 
 ![Space Trivia game](./assets/images/app_screenshot.png)
 
-## [Space Trivia deployed app](https://dirk-kiesewetter.github.io/SpaceTrivia_refactored/)
+## [Space Trivia deployed app](https://dirk-dev.github.io/SpaceTrivia_refactored/)
 
 ---
 
 This is the Space Trivia game refactored for cleaner code &amp; ES6 syntax. The questions are no longer hard-coded, but are generated dynamically. In addition, the questions have been moved into a separate JavaScript file for better modularity.
 
-The GitHub repo for the original version can be found [here](https://github.com/dirk-kiesewetter/SpaceTriviaGame-v1):
+The GitHub repo for the original version can be found [here](https://github.com/dirk-dev/SpaceTriviaGame-v1):
 
 ## About Space Trivia:
 
